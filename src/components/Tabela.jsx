@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 export const Tabela = ({ negociacoes }) => {
-    // Calcula a soma total das negociações
+    // Lista e Calcula a soma total das negociações
     const somaTotal = negociacoes.reduce(
         (total, { quantidade, valor }) => total + quantidade * valor,
         0
@@ -19,7 +19,8 @@ export const Tabela = ({ negociacoes }) => {
                     </tr>
                 </thead>
 
-                <tbody>
+                {/* Lista todas as negociações*/}
+                <tbody>  
                     {negociacoes.map((negociacao, index) => (
                         <tr key={index}>
                             <td>{negociacao.data}</td>
@@ -34,7 +35,7 @@ export const Tabela = ({ negociacoes }) => {
                     <tr>
                         <td colSpan="3"></td>
                         <td>
-                            {/* Exibe a soma total formatada como moeda brasileira */}
+                            {/* Exibindo a soma total formatada como moeda brasileira */}
                             {somaTotal.toLocaleString("pt-BR", {
                                 style: "currency",
                                 currency: "BRL",

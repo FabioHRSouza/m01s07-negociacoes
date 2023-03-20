@@ -3,7 +3,7 @@ import { GrupoInput } from "./GrupoInput";
 import { useState } from "react";
 import PropTypes from 'prop-types';
 
-export const Formulario = ({ quandoAdicionar }) => {
+export const Formulario = ({ Adicionando }) => {
     // Define os estados iniciais dos inputs
     const [data, setData] = useState("");
     const [quantidade, setQuantidade] = useState("");
@@ -23,7 +23,7 @@ export const Formulario = ({ quandoAdicionar }) => {
         }
 
         // Chama a função passada como prop para adicionar a negociação
-        quandoAdicionar(negociacao)
+        Adicionando(negociacao)
     }
 
     return (
@@ -48,5 +48,5 @@ export const Formulario = ({ quandoAdicionar }) => {
 
 // Define os tipos das props esperadas pelo componente
 Formulario.propTypes = {
-    quandoAdicionar: PropTypes.func.isRequired
+    Adicionando: PropTypes.func.isRequired
 }

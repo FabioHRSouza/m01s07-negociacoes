@@ -4,22 +4,23 @@ import { useState } from "react";
 import { Tabela } from "./components/Tabela";
 
 export const App = () => {
-  // Estado que armazena as negociações
+  // Armazena as negociações
   const [negociacoes, setNegociacoes] = useState([]);
 
-  // Função que adiciona uma nova negociação ao estado
+  // Adiciona uma nova negociação
   const adicionarNegociacao = (negociacao) => {
     setNegociacoes([...negociacoes, negociacao]);
   };
 
-  // Renderização do componente
+  // Renderizando o componente
   return (
     <div>
       <Header titulo="Negociações" />
       <div className="container">
-        <Formulario quandoAdicionar={adicionarNegociacao} />
+        <Formulario Adicionando={adicionarNegociacao} />
         <Tabela negociacoes={negociacoes} />
       </div>
+      
     </div>
   );
 };
